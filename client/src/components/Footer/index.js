@@ -10,12 +10,12 @@ import { makeStyles } from "@material-ui/core/styles";
 // import ListItem from "@material-ui/core/ListItem";
 // // @material-ui/icons
 // import Favorite from "@material-ui/icons/Favorite";
-
-import styles from "../../assets/jss/material-kit-pro-react/components/footerStyle.js";
+// ../../assets/jss/material-kit-pro-react/components/footerStyle.js
+import styles from "../../assets/jss/material-kit-pro-react/components/cardFooterStyle";
 
 const useStyles = makeStyles(styles);
 
-export function Footer(props) {
+export default function Footer(props) {
   const { children, content, theme, big, className } = props;
   const classes = useStyles();
   const themeType =
