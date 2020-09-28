@@ -1,20 +1,24 @@
-const express = require("express");
+var express = require("express");
 
-const mongoose = require("mongoose");
-const routes = require("./routes");
-const app = express();
-const PORT = process.env.PORT || 3001;
+// Sets up the Express App
+// =============================================================
+var app = express();
+var PORT = process.env.PORT || 8080;
 
-// Define middleware here
+// Requiring our models for syncing
+var db = require("./models");
+
+// Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-// Serve up static assets (usually on heroku)
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-}
-// Add routes, both API and view
-app.use(routes);
 
+// Static directory
+app.use(express.static("public"));
+
+// Routes
+// =============================================================
+require("./routes/api-routes.js")(app);
+require("./routes/html-routes.js")(app);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
@@ -23,4 +27,3 @@ db.sequelize.sync({ force: true }).then(function () {
     console.log("App listening on PORT " + PORT);
   });
 });
-
