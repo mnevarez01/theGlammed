@@ -1,16 +1,18 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-// import Books from "./pages/Books";
-// import Detail from "./pages/Detail";
-// import NoMatch from "./pages/NoMatch";
+import Footer from "./components/Footer";
+import Carousel from './components/Carousels'
 import Nav from "./components/Nav";
-// import Footer from './components/Footer'
+import Jumbotron from './components/Jumbotron'
+
 
 function App() {
   return (
     <>
       <Nav />
-
+      <Carousel />
+      <Jumbotron />
+      <Footer fixed='bottom' />
     </>
     // <Router>
     //   <Route path="/" component={PresentationPage} />

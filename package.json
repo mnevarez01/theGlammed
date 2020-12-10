@@ -24,7 +24,7 @@
     "classnames": "^2.2.6",
     "express": "^4.16.3",
     "if-env": "^1.0.4",
-    "mongoose": "^5.3.16",
+    "mysql": "^2.18.1",
     "prop-types": "^15.7.2"
   }
 }

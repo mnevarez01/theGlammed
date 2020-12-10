@@ -1,21 +1,24 @@
 /* eslint-disable */
 import React from "react";
-// nodejs library to set properties for components
-import { BottomNavigation } from '@material-ui/core';
+import Navbar from 'react-bootstrap/Navbar'
 
 function Footer() {
 
 
 
   return (
-    <>
-      <BottomNavigation >
-        <BottomNavigationAction label="Recents" value="recents" />
-        <BottomNavigationAction label="Favorites" value="favorites" />
-        <BottomNavigationAction label="Nearby" value="nearby" />
-        <BottomNavigationAction label="Folder" value="folder" />
-      </BottomNavigation>
-    </>
+    <Navbar bg="dark" variant="dark" >
+      <Navbar.Brand href="#home">
+        <img
+          alt=""
+          src="/logo.svg"
+          width="30"
+          height="30"
+          className="d-inline-block align-top"
+        />{' '}
+      The Glammed
+    </Navbar.Brand>
+    </Navbar>
   )
 }
 export default Footer
