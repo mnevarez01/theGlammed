@@ -1,13 +1,18 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+module.exports = function (sequelize, DataTypes) {
+  var Item = sequelize.define("Item", {
+    // Giving the Author model a name of type STRING
+    name: DataTypes.STRING,
+    price: DataTypes.INTEGER,
+    description: DataTypes.STRING
+  });
 
-const glammedSchema = new Schema({
-  product: { type: String, required: true },
-  creator: { type: String, required: true },
-  description: String,
-  date: { type: Date, default: Date.now }
-});
+  // Author.associate = function (models) {
+  //   // Associating Author with Posts
+  //   // When an Author is deleted, also delete any associated Posts
+  //   Author.hasMany(models.Post, {
+  //     onDelete: "cascade"
+  //   });
+  // };
 
-const Product = mongoose.model("Book", glammedSchema);
-
-module.exports = Product;
+  return Item;
+};
